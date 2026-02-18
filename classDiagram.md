@@ -3,7 +3,6 @@
 
 ## Overview
 This diagram represents the major domain models and their relationships. The design follows **Object-Oriented Programming (OOP)** principles, utilizing Inheritance for the User model and Composition for Medical Records.
-
 ```mermaid
 classDiagram
     %% Core User Class
