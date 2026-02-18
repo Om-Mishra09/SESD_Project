@@ -1,4 +1,4 @@
-```markdown
+
 # ER Diagram — MediCore
 
 ## Overview
