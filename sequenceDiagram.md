@@ -1,4 +1,4 @@
-```markdown
+
 # Sequence Diagram — MediCore
 
 ## Overview
