@@ -1,25 +1,25 @@
-# Use Case Diagram — MediCore
-
+# Use Case Diagram
 ## Overview
-This diagram outlines the primary interactions for the three main actors: **Patient**, **Doctor**, and **Admin**. It highlights the security boundaries where patients can request services, but only doctors can authorize medical records.
+This diagram outlines the primary interactions for the three main actors: **Patient**, **Doctor**, and **Admin**.
 
 ```mermaid
-usecaseDiagram
-    actor "Patient" as P
-    actor "Doctor" as D
-    actor "Admin" as A
+graph LR
+    %% Actors represented as Boxes
+    P[Patient]
+    D[Doctor]
+    A[Admin]
 
-    package "MediCore System" {
-        usecase "Login / Authentication" as UC1
-        usecase "Search Doctors" as UC2
-        usecase "Book Appointment" as UC3
-        usecase "View Medical History" as UC4
-        usecase "Manage Availability" as UC5
-        usecase "Prescribe Medication" as UC6
-        usecase "Manage Users & Depts" as UC7
-        usecase "Cancel Appointment" as UC8
-    }
+    %% Use Cases represented as Ovals
+    UC1([Login / Authentication])
+    UC2([Search Doctors])
+    UC3([Book Appointment])
+    UC4([View Medical History])
+    UC5([Manage Availability])
+    UC6([Prescribe Medication])
+    UC7([Manage Users & Depts])
+    UC8([Cancel Appointment])
 
+    %% Relationships
     P --> UC1
     P --> UC2
     P --> UC3
@@ -34,11 +34,20 @@ usecaseDiagram
     A --> UC1
     A --> UC7
     
-    UC3 ..> UC5 : <<checks>>
-    UC6 ..> UC4 : <<updates>>
-    ID,Use Case,Actor,Description
-    
-UC1,Login / Auth,All,Secure JWT-based authentication for all user roles.
-UC3,Book Appointment,Patient,Request a time slot; triggers availability check.
-UC5,Manage Availability,Doctor,"Toggle ""On Duty"" status to accept/reject new bookings."
-UC6,Prescribe Meds,Doctor,Create a permanent medical record linked to an appointment.
+    %% Connections between use cases
+    UC3 -.-> UC5
+    UC6 -.-> UC4
+
+```
+
+## Use Case Descriptions
+
+| ID | Use Case | Actor | Description |
+| --- | --- | --- | --- |
+| **UC1** | Login / Auth | All | Secure JWT-based authentication for all user roles. |
+| **UC3** | Book Appointment | Patient | Request a time slot; triggers availability check. |
+| **UC5** | Manage Availability | Doctor | Toggle "On Duty" status to accept/reject new bookings. |
+| **UC6** | Prescribe Meds | Doctor | Create a permanent medical record linked to an appointment. |
+
+
+
