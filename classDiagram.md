@@ -1,4 +1,4 @@
-```markdown
+
 # Class Diagram — MediCore
 
 ## Overview
