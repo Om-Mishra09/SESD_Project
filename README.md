@@ -8,6 +8,7 @@
 > **MediCore** is a backend-heavy system designed to manage hospital operations with strict data integrity, preventing resource scheduling conflicts (double-booking) and ensuring role-based security.
 
 ---
+## Live Hosted Project LINK - https://medicore-frontend-seven.vercel.app/
 
 ## 📂 System Design Documentation
 Detailed architectural diagrams and logic flows can be found here:
