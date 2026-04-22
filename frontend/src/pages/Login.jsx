@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { HeartPulse, ArrowRight, Loader2, Mail, Lock } from 'lucide-react';
+import { HeartPulse, ArrowRight, ArrowLeft, Loader2, Mail, Lock } from 'lucide-react';
 
 import api from '../api';
 
@@ -76,6 +76,15 @@ export default function Login() {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10">
         <div className="bg-white/80 backdrop-blur-xl py-8 px-4 shadow-2xl shadow-slate-200/50 sm:rounded-3xl sm:px-10 border border-white">
+          <button
+            type="button"
+            onClick={() => navigate('/')}
+            className="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm transition-colors mb-6"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </button>
+
           <form className="space-y-6" onSubmit={handleLogin}>
             
             {error && (
